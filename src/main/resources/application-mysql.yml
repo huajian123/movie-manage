@@ -1,0 +1,3 @@
+mybatis:
+  config-location: classpath:mapper/mybatis-mysql-config.xml
+  mapper-locations: classpath:mapper/*.xml

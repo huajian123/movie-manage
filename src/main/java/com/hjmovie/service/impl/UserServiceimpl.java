@@ -17,10 +17,11 @@ public class UserServiceimpl implements UserService {
 
     @Override
     public Result findAll() {
-        //  List<UserDo>
-        System.out.println(userMapper.findAll());
-        System.out.println("1111111111111111111111");
-        // return userMapper.findAll();
         return Result.success(userMapper.findAll());
+    }
+
+    @Override
+    public Result addUser(UserDo userDo) {
+        return Result.success(userMapper.addUser(userDo));
     }
 }

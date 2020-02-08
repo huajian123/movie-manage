@@ -4,4 +4,20 @@
     <select id="findAll" resultType="com.hjmovie.dao.entity.UserDo">
         SELECT * FROM t_user
     </select>
+
+    <insert id="addUser" parameterType="com.hjmovie.dao.entity.UserDo">
+        insert into t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">`NAME`,</if>
+            <if test="password != null">PASSWORD,</if>
+            <if test="balance != null">BALANCE,</if>
+            <if test="buyMovie != null">buy_movie,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">#{name},</if>
+            <if test="password != null">#{password},</if>
+            <if test="balance != null">#{balance},</if>
+            <if test="buyMovie != null">#{buyMovie},</if>
+        </trim>
+    </insert>
 </mapper>

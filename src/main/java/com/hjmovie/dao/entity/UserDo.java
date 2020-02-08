@@ -4,6 +4,19 @@ public class UserDo {
     private int id;
     private String name;
     private String password;
+    private int buyMovie;
+    private double balance;
+
+    @Override
+    public String toString() {
+        return "UserDo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", buyMovie=" + buyMovie +
+                ", balance=" + balance +
+                '}';
+    }
 
     public int getId() {
         return id;
@@ -29,9 +42,27 @@ public class UserDo {
         this.password = password;
     }
 
-    public UserDo(int id, String name, String password) {
+    public int getBuyMovie() {
+        return buyMovie;
+    }
+
+    public void setBuyMovie(int buyMovie) {
+        this.buyMovie = buyMovie;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public UserDo(int id, String name, String password, int buyMovie, double balance) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.buyMovie = buyMovie;
+        this.balance = balance;
     }
 }
