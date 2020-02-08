@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hjmovie.dao.mapper.MovieMapper">
+    <resultMap id="BaseResultMap" type="com.hjmovie.dao.entity.MovieDo">
+        <result column="id" property="id" />
+        <result column="movie_name" property="movieName" />
+        <result column="release_time" property="releaseTime" />
+        <result column="cover" property="cover" />
+        <result column="votes" property="votes" />
+        <result column="remain_votes" property="remainVotes" />
+        <result column="box_office" property="boxOffice" />
+        <result column="score" property="score" />
+        <result column="price" property="price" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id,
+                movie_name,
+                release_time,
+                cover,
+                votes,
+                remain_votes,
+                box_office,
+                score,
+                price
+    </sql>
+
+    <select id="getMovieList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+         FROM t_movie
+    </select>
+</mapper>

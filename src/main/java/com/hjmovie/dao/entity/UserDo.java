@@ -7,17 +7,6 @@ public class UserDo {
     private int buyMovie;
     private double balance;
 
-    @Override
-    public String toString() {
-        return "UserDo{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", buyMovie=" + buyMovie +
-                ", balance=" + balance +
-                '}';
-    }
-
     public int getId() {
         return id;
     }
@@ -55,14 +44,6 @@ public class UserDo {
     }
 
     public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public UserDo(int id, String name, String password, int buyMovie, double balance) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.buyMovie = buyMovie;
         this.balance = balance;
     }
 }
