@@ -6,8 +6,9 @@ CREATE TABLE `t_movie` (
   `votes` int(255) DEFAULT NULL COMMENT '总票数',
   `remain_votes` int(255) DEFAULT NULL COMMENT '剩余票数',
   `box_office` int(255) DEFAULT NULL COMMENT '票房',
-  `score` double(255,0) DEFAULT NULL COMMENT '评分',
+  `score` double(255,1) DEFAULT NULL COMMENT '评分',
   `price` decimal(10,0) DEFAULT NULL COMMENT '价格',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
 
