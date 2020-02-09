@@ -29,4 +29,29 @@
         SELECT <include refid="Base_Column_List" />
          FROM t_movie
     </select>
+
+    <insert id="addMovie" parameterType="com.hjmovie.dao.entity.MovieDo">
+        insert into t_movie
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="releaseTime != null">RELEASE_TIME,</if>
+            <if test="remainVotes != null">REMAIN_VOTES,</if>
+            <if test="boxOffice != null">BOX_OFFICE,</if>
+            <if test="price != null">PRICE,</if>
+            <if test="score != null">SCORE,</if>
+            <if test="votes != null">VOTES,</if>
+            <if test="cover != null">COVER,</if>
+            <if test="movieName != null">MOVIE_NAME,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="releaseTime != null">#{releaseTime},</if>
+            <if test="remainVotes != null">#{remainVotes},</if>
+            <if test="boxOffice != null">#{boxOffice},</if>
+            <if test="price != null">#{price},</if>
+            <if test="score != null">#{score},</if>
+            <if test="votes != null">#{votes},</if>
+            <if test="cover != null">#{cover},</if>
+            <if test="movieName != null">#{movieName},</if>
+        </trim>
+    </insert>
+
 </mapper>

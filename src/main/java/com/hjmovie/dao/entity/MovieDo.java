@@ -13,22 +13,6 @@ public class MovieDo {
     private String cover;
     private String movieName;
 
-    public MovieDo(){
-
-    }
-
-    public MovieDo(int id, Date releaseTime, int remainVotes, int boxOffice, double price, double score, int votes, String cover, String movieName) {
-        this.id = id;
-        this.releaseTime = releaseTime;
-        this.remainVotes = remainVotes;
-        this.boxOffice = boxOffice;
-        this.price = price;
-        this.score = score;
-        this.votes = votes;
-        this.cover = cover;
-        this.movieName = movieName;
-    }
-
     public int getId() {
         return id;
     }
