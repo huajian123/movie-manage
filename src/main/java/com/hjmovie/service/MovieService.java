@@ -7,4 +7,6 @@ public interface MovieService {
     Result getMovieList();
 
     Result addMovie(MovieDo movieDo);
+
+    Result delMovie(Integer id);
 }

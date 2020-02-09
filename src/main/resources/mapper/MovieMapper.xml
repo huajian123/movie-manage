@@ -30,6 +30,11 @@
          FROM t_movie
     </select>
 
+    <delete id="delMovie">
+        DELETE FROM t_movie
+        WHERE id = #{id}
+    </delete>
+
     <insert id="addMovie" parameterType="com.hjmovie.dao.entity.MovieDo">
         insert into t_movie
         <trim prefix="(" suffix=")" suffixOverrides=",">

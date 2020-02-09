@@ -10,4 +10,6 @@ public interface MovieMapper {
     List<MovieDo> getMovieList();
 
     int addMovie(MovieDo movieDo);
+
+    int delMovie(Integer id);
 }

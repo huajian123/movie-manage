@@ -21,4 +21,9 @@ public class MovieServiceimpl implements MovieService {
     public Result addMovie(MovieDo movieDo) {
         return Result.success(movieMapper.addMovie(movieDo));
     }
+
+    @Override
+    public Result delMovie(Integer id) {
+        return Result.success(movieMapper.delMovie(id));
+    }
 }
