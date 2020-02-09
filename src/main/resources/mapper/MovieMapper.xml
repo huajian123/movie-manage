@@ -35,6 +35,11 @@
         WHERE id = #{id}
     </delete>
 
+    <select id="getMovieDetail"  resultType="com.hjmovie.dao.entity.MovieDo">
+        SELECT  <include refid="Base_Column_List" /> FROM t_movie
+        WHERE id = #{id}
+    </select>
+
     <insert id="addMovie" parameterType="com.hjmovie.dao.entity.MovieDo">
         insert into t_movie
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -58,5 +63,37 @@
             <if test="movieName != null">#{movieName},</if>
         </trim>
     </insert>
+
+    <update id="editMovie" parameterType="com.hjmovie.dao.entity.MovieDo">
+        update t_movie
+        <set>
+            <if test="movieName != null">
+                movie_name = #{movieName},
+            </if>
+            <if test="releaseTime != null">
+                release_time = #{releaseTime},
+            </if>
+            <if test="cover != null">
+                cover = #{cover},
+            </if>
+
+            <if test="votes != null">
+                votes = #{votes},
+            </if>
+            <if test="remainVotes != null">
+                remain_votes = #{remainVotes},
+            </if>
+            <if test="boxOffice != null">
+                box_office = #{boxOffice},
+            </if>
+            <if test="score != null">
+                score = #{score},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
 
 </mapper>

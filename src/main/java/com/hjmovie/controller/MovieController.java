@@ -29,4 +29,14 @@ public class MovieController {
     public Result delUser(@RequestBody MovieDo movieDo) {
         return movieService.delMovie(movieDo.getId());
     }
+
+    @GetMapping(value = "movie/detail")
+    public Result getMovieDetail(Integer id) {
+        return movieService.getMovieDetail(id);
+    }
+
+    @PostMapping(value ="movie/edit")
+    public Result editUser(@RequestBody MovieDo movieDo) {
+        return movieService.editUser(movieDo);
+    }
 }
