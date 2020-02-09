@@ -20,4 +20,10 @@ public class UserController {
     public Result addUser(@RequestBody UserDo userDo) {
         return userService.addUser(userDo);
     }
+
+    @PostMapping(value ="user/del")
+    public Result delUser(Integer id) {
+        System.out.println(id);
+        return userService.delUser(id);
+    }
 }

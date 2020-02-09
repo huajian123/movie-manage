@@ -24,4 +24,9 @@ public class UserServiceimpl implements UserService {
     public Result addUser(UserDo userDo) {
         return Result.success(userMapper.addUser(userDo));
     }
+
+    @Override
+    public Result delUser(Integer id) {
+        return Result.success(userMapper.delUser(id));
+    }
 }

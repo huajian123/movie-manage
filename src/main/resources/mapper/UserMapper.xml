@@ -2,9 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hjmovie.dao.mapper.UserMapper">
     <sql id="Base_Column_List">
-        `name`,
+        id,`name`,
         password,balance,buy_movie
-        
     </sql>
     
     <select id="findAll" resultType="com.hjmovie.dao.entity.UserDo">
@@ -26,4 +25,9 @@
             <if test="buyMovie != null">#{buyMovie},</if>
         </trim>
     </insert>
+
+    <delete id="delUser">
+        DELETE FROM t_user
+        WHERE id = #{id}
+    </delete>
 </mapper>

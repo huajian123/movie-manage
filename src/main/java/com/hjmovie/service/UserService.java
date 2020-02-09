@@ -7,4 +7,6 @@ public interface UserService {
     Result findAll();
 
     Result addUser(UserDo userDo);
+
+    Result delUser(Integer id);
 }
