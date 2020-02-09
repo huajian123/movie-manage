@@ -12,4 +12,6 @@ public interface UserMapper {
     int addUser(UserDo userDo);
 
     int delUser(Integer id);
+
+    UserDo getUserDetail(Integer id);
 }

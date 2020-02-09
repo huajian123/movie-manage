@@ -9,4 +9,6 @@ public interface UserService {
     Result addUser(UserDo userDo);
 
     Result delUser(Integer id);
+
+    Result getUserDetail(Integer id);
 }

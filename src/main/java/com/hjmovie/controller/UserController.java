@@ -22,8 +22,12 @@ public class UserController {
     }
 
     @PostMapping(value ="user/del")
-    public Result delUser(Integer id) {
-        System.out.println(id);
-        return userService.delUser(id);
+    public Result delUser(@RequestBody UserDo userDo) {
+        return userService.delUser(userDo.getId());
+    }
+
+    @GetMapping(value = "user/detail")
+    public Result getUserDetail(Integer id) {
+        return userService.getUserDetail(id);
     }
 }
