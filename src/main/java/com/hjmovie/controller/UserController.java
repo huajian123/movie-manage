@@ -26,6 +26,11 @@ public class UserController {
         return userService.delUser(userDo.getId());
     }
 
+    @PostMapping(value ="user/edit")
+    public Result editUser(@RequestBody UserDo userDo) {
+        return userService.editUser(userDo);
+    }
+
     @GetMapping(value = "user/detail")
     public Result getUserDetail(Integer id) {
         return userService.getUserDetail(id);

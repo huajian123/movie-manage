@@ -35,4 +35,25 @@
         SELECT  <include refid="Base_Column_List" /> FROM t_user
         WHERE id = #{id}
     </select>
+
+    <update id="editUser" parameterType="com.hjmovie.dao.entity.UserDo">
+        update t_user
+        <set>
+            <if test="name != null">
+                `name` = #{name},
+            </if>
+            <if test="balance != null">
+                balance = #{balance},
+            </if>
+            <if test="buyMovie != null">
+                buy_movie = #{buyMovie},
+            </if>
+
+            <if test="password != null">
+                password = #{password},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
 </mapper>

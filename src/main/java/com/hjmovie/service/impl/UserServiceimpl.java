@@ -26,6 +26,11 @@ public class UserServiceimpl implements UserService {
     }
 
     @Override
+    public Result editUser(UserDo userDo) {
+        return Result.success(userMapper.editUser(userDo));
+    }
+
+    @Override
     public Result delUser(Integer id) {
         return Result.success(userMapper.delUser(id));
     }

@@ -10,6 +10,7 @@ public interface UserMapper {
     List<UserDo> findAll();
 
     int addUser(UserDo userDo);
+    int editUser(UserDo userDo);
 
     int delUser(Integer id);
 
