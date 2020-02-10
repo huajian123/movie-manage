@@ -12,9 +12,9 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(value = "user/list")
-    public Result findAll(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
-                          @RequestParam(value = "pageSize",defaultValue = "3") int pageSize) {
-        return userService.findAll(pageNum,pageSize);
+    public Result findAll(String name, @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,
+                          @RequestParam(value = "pageSize", defaultValue = "3") int pageSize) {
+        return userService.findAll(pageNum, pageSize,name);
     }
 
     @PostMapping(value = "user/add")
@@ -22,12 +22,12 @@ public class UserController {
         return userService.addUser(userDo);
     }
 
-    @PostMapping(value ="user/del")
+    @PostMapping(value = "user/del")
     public Result delUser(@RequestBody UserDo userDo) {
         return userService.delUser(userDo.getId());
     }
 
-    @PostMapping(value ="user/edit")
+    @PostMapping(value = "user/edit")
     public Result editUser(@RequestBody UserDo userDo) {
         return userService.editUser(userDo);
     }

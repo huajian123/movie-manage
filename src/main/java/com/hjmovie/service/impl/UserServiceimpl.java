@@ -7,6 +7,7 @@ import com.hjmovie.common.base.Result;
 import com.hjmovie.dao.entity.UserDo;
 import com.hjmovie.dao.mapper.UserMapper;
 import com.hjmovie.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,9 @@ public class UserServiceimpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public Result<PageInfo> findAll(int pageNum, int pageSize) {
+    public Result<PageInfo> findAll(int pageNum, int pageSize, String name) {
         PageHelper.startPage(pageNum, pageSize);
-        List<UserDo> userDoList = userMapper.findAll();
+        List<UserDo> userDoList = userMapper.findAll(name);
         PageInfo<UserDo> pageInfo = new PageInfo<>(userDoList);
         return Result.success(pageInfo);
     }
