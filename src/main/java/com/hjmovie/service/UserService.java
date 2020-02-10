@@ -4,7 +4,7 @@ import com.hjmovie.common.base.Result;
 import com.hjmovie.dao.entity.UserDo;
 
 public interface UserService {
-    Result findAll();
+    Result findAll(int pageNum,int pageSize);
 
     Result addUser(UserDo userDo);
     Result editUser(UserDo userDo);

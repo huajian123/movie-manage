@@ -12,8 +12,9 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(value = "user/list")
-    public Result findAll() {
-        return userService.findAll();
+    public Result findAll(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                          @RequestParam(value = "pageSize",defaultValue = "3") int pageSize) {
+        return userService.findAll(pageNum,pageSize);
     }
 
     @PostMapping(value = "user/add")

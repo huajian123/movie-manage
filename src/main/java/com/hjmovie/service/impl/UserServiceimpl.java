@@ -1,6 +1,8 @@
 package com.hjmovie.service.impl;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.hjmovie.common.base.Result;
 import com.hjmovie.dao.entity.UserDo;
 import com.hjmovie.dao.mapper.UserMapper;
@@ -10,14 +12,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("userService")
+@Service()
 public class UserServiceimpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
     @Override
-    public Result findAll() {
-        return Result.success(userMapper.findAll());
+    public Result<PageInfo> findAll(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<UserDo> userDoList = userMapper.findAll();
+        PageInfo<UserDo> pageInfo = new PageInfo<>(userDoList);
+        return Result.success(pageInfo);
     }
 
     @Override
