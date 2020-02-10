@@ -5,10 +5,7 @@ import com.hjmovie.dao.entity.MovieDo;
 import com.hjmovie.dao.entity.UserDo;
 import com.hjmovie.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MovieController {
@@ -16,8 +13,9 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping(value = "movie/list")
-    public Result getMovieList(){
-        return movieService.getMovieList();
+    public Result getMovieList(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                               @RequestParam(value = "pageSize",defaultValue = "3") int pageSize){
+        return movieService.getMovieList(pageNum,pageSize);
     }
 
     @PostMapping(value = "movie/add")

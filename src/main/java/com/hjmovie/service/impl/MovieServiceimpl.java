@@ -1,11 +1,16 @@
 package com.hjmovie.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.hjmovie.common.base.Result;
 import com.hjmovie.dao.entity.MovieDo;
+import com.hjmovie.dao.entity.UserDo;
 import com.hjmovie.dao.mapper.MovieMapper;
 import com.hjmovie.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service()
 public class MovieServiceimpl implements MovieService {
@@ -13,8 +18,11 @@ public class MovieServiceimpl implements MovieService {
     private MovieMapper movieMapper;
 
     @Override
-    public Result getMovieList() {
-        return Result.success(movieMapper.getMovieList());
+    public Result<PageInfo> getMovieList(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<MovieDo> movieDoList = movieMapper.getMovieList();
+        PageInfo<MovieDo> pageInfo = new PageInfo<>(movieDoList);
+        return Result.success(pageInfo);
     }
 
     @Override
