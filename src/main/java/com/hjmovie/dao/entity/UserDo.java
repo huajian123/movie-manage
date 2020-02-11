@@ -4,7 +4,7 @@ public class UserDo {
     private int id;
     private String name;
     private String password;
-    private int buyMovie;
+    private String buyMovie;
     private double balance;
 
     public int getId() {
@@ -31,11 +31,11 @@ public class UserDo {
         this.password = password;
     }
 
-    public int getBuyMovie() {
+    public String getBuyMovie() {
         return buyMovie;
     }
 
-    public void setBuyMovie(int buyMovie) {
+    public void setBuyMovie(String buyMovie) {
         this.buyMovie = buyMovie;
     }
 
