@@ -18,9 +18,9 @@ public class MovieServiceimpl implements MovieService {
     private MovieMapper movieMapper;
 
     @Override
-    public Result<PageInfo> getMovieList(int pageNum, int pageSize) {
+    public Result<PageInfo> getMovieList(int pageNum, int pageSize,String movieName) {
         PageHelper.startPage(pageNum, pageSize);
-        List<MovieDo> movieDoList = movieMapper.getMovieList();
+        List<MovieDo> movieDoList = movieMapper.getMovieList(movieName);
         PageInfo<MovieDo> pageInfo = new PageInfo<>(movieDoList);
         return Result.success(pageInfo);
     }

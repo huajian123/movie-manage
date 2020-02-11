@@ -5,7 +5,7 @@ import com.hjmovie.dao.entity.MovieDo;
 import com.hjmovie.dao.entity.UserDo;
 
 public interface MovieService {
-    Result getMovieList(int pageNum ,int pageSize);
+    Result getMovieList(int pageNum ,int pageSize,String movieName);
 
     Result addMovie(MovieDo movieDo);
 

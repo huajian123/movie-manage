@@ -13,9 +13,9 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping(value = "movie/list")
-    public Result getMovieList(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+    public Result getMovieList(String movieName, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                @RequestParam(value = "pageSize",defaultValue = "3") int pageSize){
-        return movieService.getMovieList(pageNum,pageSize);
+        return movieService.getMovieList(pageNum,pageSize,movieName);
     }
 
     @PostMapping(value = "movie/add")

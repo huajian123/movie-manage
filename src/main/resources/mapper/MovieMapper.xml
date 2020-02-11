@@ -28,6 +28,11 @@
     <select id="getMovieList" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List" />
          FROM t_movie
+        <where>
+            <if test="movieName != null">
+                and `movie_name` like concat("%", #{movieName},"%")
+            </if>
+        </where>
     </select>
 
     <delete id="delMovie">
