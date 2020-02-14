@@ -9,6 +9,4 @@ public class UserDo {
     private String password;
     private String buyMovie;
     private double balance;
-
-
 }

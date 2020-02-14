@@ -8,6 +8,10 @@ spring:
     username: root
     password: abc15150568124
 
+  servlet:
+    multipart:
+      enabled: true
+      location: E:/projects/hj-movie-manage-service/src/main/resources/static/images
 #mybatis的相关配置
 mybatis:
   #mapper配置文件
