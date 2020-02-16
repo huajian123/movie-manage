@@ -11,7 +11,7 @@ spring:
   servlet:
     multipart:
       enabled: true
-      location: E:/projects/hj-movie-manage-service/src/main/resources/static/images
+      location: E:/projects/hj-movie-manage-service/src/main/resources/static/img
 #mybatis的相关配置
 mybatis:
   #mapper配置文件

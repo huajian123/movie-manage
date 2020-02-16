@@ -56,6 +56,6 @@ public class UploadManager {
         }
         String ip = localHost.getHostAddress();
         System.out.println("http://" + ip + ":" + port + "/" + fileName);
-        return "http://" + ip + ":" + port + "/images/" + fileName;
+        return "http://" + ip + ":" + port + "/img/" + fileName;
     }
 }
